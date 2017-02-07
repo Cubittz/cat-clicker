@@ -1,0 +1,9 @@
+.cat {
+    border: 1px solid black;
+    width: 300px;
+    height: auto;
+    background-image: "/img/cat.jpg";
+}
+
+.cat .cat1 {
+}
