@@ -1,13 +1,13 @@
 $(function(){
     var model = {
         init: function() {
-            var cats = [
+            this.cats = [
                 {name: "Poppy", clickCount: 0, url: "img/cat.jpg"},
                 {name: "Sophie", clickCount: 0, url: "img/cat2.jpg"}
             ];
         },
         getAllCats: function() {
-            return cats;
+            return this.cats;
         }
     }
 
@@ -32,7 +32,7 @@ $(function(){
             var cats = octopus.getCats();
             for (var i = 0; i < cats.length; i++) {
                 var cat = cats[i];
-                htmlStr += '<li class="cat">' + cat.name + '</li>';
+                htmlStr += '<li>' + cat.name + '</li>';
             };
             this.catList.html(htmlStr);
         }
