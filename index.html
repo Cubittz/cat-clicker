@@ -6,15 +6,16 @@
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
+<div class="display-cats" id="cats">
     <div class="cat cat1" onclick="addOne('cat1Counter');">
         <p>Say hello to <span id="cat1"></span></p>
         <p id="cat1Counter"></p>
     </div>
-    <div style="width:40%">
+    <div class="cat cat2" onclick="addOne('cat2Counter');">
         <p>Say hello to <span id="cat2"></span></p>
         <p id="cat2Counter"></p>
-        <button onclick="addOne('cat2Counter');"><img src="img/cat2.jpg" /></button>
     </div>
+</div>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

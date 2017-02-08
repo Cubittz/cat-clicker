@@ -1,13 +1,27 @@
-var cats = {
-    CAT_1: "Poppy",
-    CAT_2: "Sophie"
-};
+var cats = [
+    {name: "Poppy", url: "img/cat.jpg"},
+    {name: "Sophie", url: "img/cat2.jpg"}
+    ];
 
-var cat1 = document.getElementById("cat1");
-var cat2 = document.getElementById("cat2");
+var catsHTML = document.getElementById("cats");
+catsHTML.innerHTML = '';
 
-cat1.innerHTML = cats.CAT_1;
-cat2.innerHTML = cats.CAT_2;
+for (var i = 0; i < cats.length; i++) {
+    var cat = cats[i];
+    catUrl = 'url(' + cat.url + ')';
+    catName = cat.name;
+
+    var elem = document.createElement('div');
+    elem.className ='cat';
+    elem.style.backgroundImage = catUrl;
+
+    var name = document.createElement('div');
+    name.innerHTML = catName;
+
+    catsHTML.appendChild(elem);
+    elem.innerHTML = name;
+}
+
 
 function addOne(element) {
     var counter = document.getElementById(element);

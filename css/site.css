@@ -1,9 +1,10 @@
-.cat {
-    border: 1px solid black;
-    width: 300px;
-    height: auto;
-    background-image: "/img/cat.jpg";
+.display-cats {
+    display: flex;
 }
 
-.cat .cat1 {
+.cat {
+    border: 1px solid black;
+    width: 600px;
+    height: 400px;
+    flex-wrap: wrap;
 }
