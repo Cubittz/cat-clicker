@@ -1,33 +1,42 @@
-var cats = [
-    {name: "Poppy", url: "img/cat.jpg"},
-    {name: "Sophie", url: "img/cat2.jpg"}
-    ];
-
-var catsHTML = document.getElementById("cats");
-catsHTML.innerHTML = '';
-
-for (var i = 0; i < cats.length; i++) {
-    var cat = cats[i];
-    catUrl = 'url(' + cat.url + ')';
-    catName = cat.name;
-
-    var elem = document.createElement('div');
-    elem.className ='cat';
-    elem.style.backgroundImage = catUrl;
-
-    var name = document.createElement('div');
-    name.innerHTML = catName;
-
-    catsHTML.appendChild(elem);
-    elem.innerHTML = name;
-}
-
-
-function addOne(element) {
-    var counter = document.getElementById(element);
-    var i = parseInt(counter.innerHTML);
-    if (isNaN(i)) {
-        i = 0;
+$(function(){
+    var model = {
+        init: function() {
+            var cats = [
+                {name: "Poppy", clickCount: 0, url: "img/cat.jpg"},
+                {name: "Sophie", clickCount: 0, url: "img/cat2.jpg"}
+            ];
+        },
+        getAllCats: function() {
+            return cats;
+        }
     }
-    counter.innerHTML = (i + 1);
-};
+
+    var octopus = {
+        getCats: function() {
+            return model.getAllCats();
+        },
+
+        init: function() {
+            model.init();
+            view.init();
+        }
+    }
+
+    var view = {
+        init: function() {
+            this.catList = $('#cat-list');
+            view.render();
+        },
+        render: function() {
+            var htmlStr = '';
+            var cats = octopus.getCats();
+            for (var i = 0; i < cats.length; i++) {
+                var cat = cats[i];
+                htmlStr += '<li class="cat">' + cat.name + '</li>';
+            };
+            this.catList.html(htmlStr);
+        }
+    };
+
+    octopus.init();
+});
