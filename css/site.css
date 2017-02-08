@@ -2,9 +2,14 @@
     display: flex;
 }
 
-.cat {
-    border: 1px solid black;
-    width: 600px;
-    height: 400px;
+.cat-list {
+    background-color: #eeeeee; 
+    width: 200px;
+    height: 100%;
     flex-wrap: wrap;
+}
+
+.cat {
+    width: 640px;
+    height: 426px;
 }
